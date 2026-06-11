@@ -9,6 +9,7 @@ resource "incus_instance" "alpine_vm" {
   config = {
     "limits.cpu"    = "1"
     "limits.memory" = "500MiB"
+    "security.secureboot" = false
 
     "user.user-data" = templatefile(
       "${path.module}/cloud-init.tpl",
@@ -16,6 +17,7 @@ resource "incus_instance" "alpine_vm" {
         hostname = var.hostname
         username = var.username
         ssh_key  = file(var.ssh_key_path)
+        tailscale_auth_key = var.tailscale_auth_key
       }
     )
   }

@@ -23,6 +23,17 @@ users:
 ssh_pwauth: false
 
 runcmd:
+  # SSH
   - rc-update add sshd default
   - service sshd start
+
+  # Tailscale
+  - curl -fsSL https://tailscale.com/install.sh | sh
+  - rc-update add tailscale default
+  - service tailscale start
+
+  # Authenticate (optional)
+  # Uncomment if using an auth key
+  - tailscale up --auth-key=${tailscale_auth_key}
+
   - echo "Cloud-init completed"

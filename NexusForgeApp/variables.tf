@@ -6,12 +6,12 @@ variable "username" {
   default = "devops"
 }
 
-variable "address" {
-  default = "localhost"
+variable "ssh_key_path" {
+  default = "id_rsa.pub"
   type    = string
 }
 
-variable "ssh_key_path" {
-  default = "id_rsa.pub"
+variable "tailscale_auth_key" {
+  default = ""
   type    = string
 }

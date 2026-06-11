@@ -10,6 +10,5 @@ terraform {
 provider "incus" {
   remote {
     name    = "cloud-one"
-    address = "${var.address}"
   }
 }
