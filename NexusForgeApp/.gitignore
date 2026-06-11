@@ -1,0 +1,72 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+
+# Terraform State
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Terraform Variables
+*.tfvars
+*.tfvars.json
+
+# Override Files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform Plans
+*.tfplan
+plan.out
+
+# Sensitive Keys
+*.pem
+*.key
+*.pub
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# SSH Config
+.ssh/
+
+# Cloud-init generated files
+cloud-init.yaml
+user-data
+meta-data
+
+# Logs
+*.log
+
+# Environment Variables
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# JetBrains
+*.iml
+
+# Vim
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Backup Files
+*.bak
+*.tmp
+*.old
+
+# Local Secrets
+secrets/
+secret/
+credentials/
