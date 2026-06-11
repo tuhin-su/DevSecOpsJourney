@@ -4,7 +4,7 @@ resource "incus_instance" "alpine_vm" {
   name = var.hostname
   type = "virtual-machine"
 
-  image = "images:alpine/3.22/cloud"
+  image = "images:debian/13/cloud"
 
   config = {
     "limits.cpu"    = "1"

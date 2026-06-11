@@ -9,7 +9,7 @@ packages:
   - bash
   - curl
   - git
-  - openssh
+  - openssh-server
   - htop
 
 users:
@@ -23,17 +23,8 @@ users:
 ssh_pwauth: false
 
 runcmd:
-  # SSH
-  - rc-update add sshd default
-  - service sshd start
-
-  # Tailscale
+  - systemctl enable ssh --now
   - curl -fsSL https://tailscale.com/install.sh | sh
-  - rc-update add tailscale default
-  - service tailscale start
-
-  # Authenticate (optional)
-  # Uncomment if using an auth key
+  - systemctl enable tailscaled --now
   - tailscale up --auth-key=${tailscale_auth_key}
-
   - echo "Cloud-init completed"
